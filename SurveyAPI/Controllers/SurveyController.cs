@@ -52,17 +52,37 @@ namespace SurveyAPI.Controllers
         [HttpGet("option/{surveyId}")]
         public IActionResult GetOptionsBySurvey(int surveyId)
         {
-            var optionsBySurvey = _surveyService.GetOptionsBySurvey(surveyId);
+            try
+            {
+                var optionsBySurvey = _surveyService.GetOptionsBySurvey(surveyId);
 
-            return Ok(optionsBySurvey);
+                if (!optionsBySurvey.Any()) return NotFound(new List<OptionResponse>());
+
+                return Ok(optionsBySurvey);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
         }
 
         [HttpPost("option/{voteId}")]
         public IActionResult AddOptionVoteValue(int voteId)
         {
-            var response = _surveyService.AddOptionVotePoint(voteId);
+            try
+            {
+                var response = _surveyService.AddOptionVotePoint(voteId);
 
-            return Ok(response);
+                if (response != true || response != false) return NotFound();
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
+
     }
 }

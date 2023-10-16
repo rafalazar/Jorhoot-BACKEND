@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: rafa
+      POSTGRES_PASSWORD: qwerty123456
+      POSTGRES_DB: Jorhoot
+    container_name: Jorhoot
+    volumes:
+      - ./db_volume:/var/lib/postgresql/data

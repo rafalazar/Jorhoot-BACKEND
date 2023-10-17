@@ -22,4 +22,4 @@ Antes de levantar la API tener en cuenta que necesitara tener instalado y corrie
 
 ### 3. La aplicacion ya se encuentra lista para ser utilizada por lo que tendra que iniciar la parte FRONTEND de Jorhoot que la puede encontrar en el siguiente enlace:
 
-[Jorhoot - Frontend](https://github.com/rafalazar/Jorhoot-FRONTEND))
+[Jorhoot - Frontend](https://github.com/rafalazar/Jorhoot-FRONTEND)

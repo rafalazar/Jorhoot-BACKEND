@@ -74,8 +74,6 @@ namespace SurveyAPI.Controllers
             {
                 var response = _surveyService.AddOptionVotePoint(voteId);
 
-                if (response != true || response != false) return NotFound();
-
                 return Ok(response);
             }
             catch (Exception ex)
